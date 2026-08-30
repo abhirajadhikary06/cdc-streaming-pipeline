@@ -1,0 +1,24 @@
+{
+  "name": "neon-postgres-cdc",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "plugin.name": "pgoutput",
+    "database.hostname": "${NEON_HOST}",
+    "database.port": "5432",
+    "database.user": "${NEON_USER}",
+    "database.password": "${NEON_PASSWORD}",
+    "database.dbname": "${NEON_DATABASE}",
+    "database.sslmode": "require",
+    "topic.prefix": "neon_cdc",
+    "table.include.list": "public.customer_transactions",
+    "publication.name": "dbz_publication",
+    "slot.name": "neon_cdc_slot",
+    "publication.autocreate.mode": "filtered",
+    "tombstones.on.delete": "false",
+    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "key.converter.schemas.enable": "false",
+    "value.converter.schemas.enable": "false"
+  }
+}

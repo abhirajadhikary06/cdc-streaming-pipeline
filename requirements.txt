@@ -1,0 +1,9 @@
+psycopg2-binary>=2.9.9
+faker>=20.0.0
+python-dotenv>=1.0.0
+kafka-python-ng>=2.2.2
+pyspark==3.5.0
+delta-spark==3.0.0
+chdb>=2.0.0
+streamlit>=1.30.0
+pandas>=2.0.0

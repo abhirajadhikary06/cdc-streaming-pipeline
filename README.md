@@ -1,3 +1,7 @@
+<div align="center">
+<img width="2188" height="1096" alt="image" src="https://github.com/user-attachments/assets/308ed93d-2b8e-4275-af37-f8ac97e34f14" />
+</div>
+
 # Real-Time CDC Streaming Data Pipeline
 
 A lightweight, production-grade end-to-end Change Data Capture (CDC) streaming pipeline designed for continuous ingestion, processing, and real-time visualization of database transactions. Built following Medallion Architecture (Bronze, Silver, Gold) using zero-overhead embedded analytics.

@@ -133,7 +133,6 @@ python simulator/seed_database.py --seed 10
 
 ```
 
-
 * **Continuous Streaming Stream (1 event/sec):**
 ```bash
 python simulator/seed_database.py --continuous --interval 1.0

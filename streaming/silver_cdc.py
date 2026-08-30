@@ -37,9 +37,20 @@ def decode_base64_decimal(col_name):
     ).cast("decimal(12, 2)")
 
 
+def is_empty_batch(micro_batch_df):
+    """Safely detect empty micro-batches without raising async Spark callback errors."""
+    if micro_batch_df is None:
+        return True
+
+    try:
+        return micro_batch_df.rdd.isEmpty()
+    except Exception:
+        return False
+
+
 def upsert_to_silver(micro_batch_df, batch_id, silver_path):
-    if micro_batch_df.rdd.isEmpty():
-        return
+    if is_empty_batch(micro_batch_df):
+        return None
 
     spark = micro_batch_df.sparkSession
 
